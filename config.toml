@@ -48,6 +48,10 @@ copyright = "This work is licensed under a Creative Commons Attribution-ShareAli
     url = "https://twitter.com/codificat"
 
   [[params.social]]
+    name = "mastodon"
+    url = "https://mastodont.cat/@codificat"
+
+  [[params.social]]
     name = "github"
     url  = "https://github.com/codificat"
 
