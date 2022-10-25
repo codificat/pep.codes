@@ -1,0 +1,38 @@
+#+hugo_base_dir: ../
+
+* DONE Renaming git branches from master to main                 :tip:git:gh:
+CLOSED: [2022-10-25 Tue 19:53]
+:PROPERTIES:
+:EXPORT_FILE_NAME: first-post
+:END:
+
+I was looking at the [[https://github.com/thoth-station/integration-tests/][integration tests for Thoth GitHub repo]] and I get this warning:
+
+#+begin_quote
+The default branch has been renamed!
+
+=master= is now named =main=
+
+If you have a local clone, you can update it by running the following commands.
+#+end_quote
+
+These are the commands (git tips):
+
+#+begin_src sh
+  git branch -m master main
+  git fetch origin
+  git branch -u origin/main main
+  git remote set-head origin -a
+#+end_src
+
+In my case, as this is my =upstream= remote, I did:
+
+#+begin_src sh
+  git branch -m master main
+  git fetch upstream
+  git branch -u upstream/main main
+  git remote set-head upstream -a
+#+end_src
+
+This is part of Thoth Station's git branch rename effort:
+[[https://github.com/thoth-station/core/issues/391][Rename the default branch in our repositories #391]]
