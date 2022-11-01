@@ -1,6 +1,6 @@
 #+hugo_base_dir: ../
 
-* DONE Renaming git branches from master to main                 :tip:git:gh:
+* Renaming git branches from master to main                      :tip:git:gh:
 CLOSED: [2022-10-25 Tue 19:53]
 :PROPERTIES:
 :EXPORT_FILE_NAME: first-post
@@ -36,3 +36,5 @@ In my case, as this is my =upstream= remote, I did:
 
 This is part of Thoth Station's git branch rename effort:
 [[https://github.com/thoth-station/core/issues/391][Rename the default branch in our repositories #391]]
+
+[[bibliography:~/doc/bibliography/zotero.bib]]

@@ -34,3 +34,6 @@ git remote set-head upstream -a
 
 This is part of Thoth Station's git branch rename effort:
 [Rename the default branch in our repositories #391](https://github.com/thoth-station/core/issues/391)
+
+<style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
+</div>
