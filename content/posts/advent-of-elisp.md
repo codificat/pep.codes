@@ -16,10 +16,10 @@ I thought I could give a try at learning some basics using this year's [Advent o
 Hey, it's my very first Emacs Lisp program. And I don't have much time. And by
 one of these coincidences of the world, right when I had this thought of giving
 this a try, I saw [this blog post](https://sachachua.com/blog/2022/12/2022-12-19-emacs-news/) pop up in my RSS feeds, pointing to a [cool video
-](https://youtu.be/N1PAC5vs15Y)by Gavin Freborn explaining how to solve this challenge.
+](https://youtu.be/N1PAC5vs15Y)by Gavin Freeborn explaining how to solve this challenge.
 
 So, I basically used that video to learn a bit, and for the [solution](https://codeberg.org/codificat/advent-of-code/src/branch/main/2022/aoc01.el) I took
-[his code](https://gist.github.com/Gavinok/1631fd138fc91a08a33c4b66afe15f39) and only replaced a couple of common-lisp calls for (what I think) more
+[Gavin's code](https://gist.github.com/Gavinok/1631fd138fc91a08a33c4b66afe15f39) and only replaced a couple of common-lisp calls for (what I think) more
 emacs-lispy ones.
 
 
