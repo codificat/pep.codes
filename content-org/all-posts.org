@@ -2,6 +2,58 @@
 #+bibliography: ~/doc/bibliography/zotero.bib
 #+cite_export: csl
 
+* DONE Advent of Emacs Lisp                                      :lisp:emacs:
+CLOSED: [2022-12-22 Thu 21:35]
+:PROPERTIES:
+:EXPORT_FILE_NAME: advent-of-elisp
+:END:
+
+I have been using Emacs for quite some time now, but so far I have never invested time to learn Emacs Lisp.
+
+I thought I could give a try at learning some basics using this year's [[https://adventofcode.com/][Advent of code]]. I am posting my progress in a [[https://codeberg.org/codificat/advent-of-code/src/branch/main/2022][repo in codeberg]].
+
+** Day 1
+
+Hey, it's my very first Emacs Lisp program. And I don't have much time. And by
+one of these coincidences of the world, right when I had this thought of giving
+this a try, I saw [[https://sachachua.com/blog/2022/12/2022-12-19-emacs-news/][this blog post]] pop up in my RSS feeds, pointing to a [[https://youtu.be/N1PAC5vs15Y][cool video
+]]by Gavin Freborn explaining how to solve this challenge.
+
+So, I basically used that video to learn a bit, and for the [[https://codeberg.org/codificat/advent-of-code/src/branch/main/2022/aoc01.el][solution]] I took
+[[https://gist.github.com/Gavinok/1631fd138fc91a08a33c4b66afe15f39][his code]] and only replaced a couple of common-lisp calls for (what I think) more
+emacs-lispy ones.
+
+** Day 2
+
+I applied the principles I learnt from Day 1 here, using a temp buffer as a sort
+of /powerful string/.
+
+I am quite happy with [[https://codeberg.org/codificat/advent-of-code/src/branch/main/2022/aoc02.el][the result]], from a "learning elisp" perspective. It's
+likely not the most efficient way of solving this, but it feels to me that it
+hopefully captures the expressiveness of Lisp. Re-using the solution to part 1
+to add adding part 2 rules resulted, I think, in a nice application of that.
+
+* TODO Picking a new emacs theme
+:PROPERTIES:
+:EXPORT_FILE_NAME: switching-emacs-theme
+:END:
+:LOGBOOK:
+- State "TODO"       from              [2022-12-16 Fri 11:15]
+:END:
+
+See notes about [[id:13111d54-0f8a-436f-8893-ef6afea346a5][Emacs themes]] in [[id:cbd2c53d-5601-4abf-b599-689bb5970e71][2022-12-12]] and [[id:755143d4-4ba1-4ee0-98d6-05e67e70c1c3][2022-12-09]]
+
+* TODO I don't have bookmarks. I have bibliographical references. :emacs:orgmode:
+:PROPERTIES:
+:EXPORT_FILE_NAME: not-bookmarks-but-bibliography
+:END:
+
+#+begin_comment
+Topics:
+- [[id:154b8784-c0f1-4c31-b9fe-1fbd3f7ec948][Zotero]], [[id:dabcc37a-f808-499f-a03f-c688d9b006b0][bibtex]], [[id:1bd20959-4afc-4e08-ab40-82f504ced8ed][org-mode]]
+- [[id:11e14e85-882b-4f7c-8233-787db3975469][How do I organize myself with org-roam]]: links collected in daily notes or elsewhere
+#+end_comment
+
 * DONE Running Emacs in server mode                           :emacs:systemd:
 CLOSED: [2022-12-09 Fri 21:52]
 :PROPERTIES:
