@@ -1,24 +1,100 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Pep Codes</title><link>http://pep.codes/posts/</link><description>Recent content in Posts on Pep Codes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0&lt;/a></copyright><lastBuildDate>Tue, 25 Oct 2022 19:53:00 +0200</lastBuildDate><atom:link href="http://pep.codes/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Renaming git branches from master to main</title><link>http://pep.codes/posts/first-post/</link><pubDate>Tue, 25 Oct 2022 19:53:00 +0200</pubDate><guid>http://pep.codes/posts/first-post/</guid><description>I was looking at the integration tests for Thoth GitHub repo and I get this warning:
-The default branch has been renamed!
-master is now named main
-If you have a local clone, you can update it by running the following commands.
-These are the commands (git tips):
-git branch -m master main git fetch origin git branch -u origin/main main git remote set-head origin -a In my case, as this is my upstream remote, I did:</description><content type="html"><![CDATA[<p>I was looking at the <a href="https://github.com/thoth-station/integration-tests/">integration tests for Thoth GitHub repo</a> and I get this warning:</p>
-<blockquote>
-<p>The default branch has been renamed!</p>
-<p><code>master</code> is now named <code>main</code></p>
-<p>If you have a local clone, you can update it by running the following commands.</p>
-</blockquote>
-<p>These are the commands (git tips):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git branch -m master main
-</span></span><span style="display:flex;"><span>git fetch origin
-</span></span><span style="display:flex;"><span>git branch -u origin/main main
-</span></span><span style="display:flex;"><span>git remote set-head origin -a
-</span></span></code></pre></div><p>In my case, as this is my <code>upstream</code> remote, I did:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git branch -m master main
-</span></span><span style="display:flex;"><span>git fetch upstream
-</span></span><span style="display:flex;"><span>git branch -u upstream/main main
-</span></span><span style="display:flex;"><span>git remote set-head upstream -a
-</span></span></code></pre></div><p>This is part of Thoth Station&rsquo;s git branch rename effort:
-<a href="https://github.com/thoth-station/core/issues/391">Rename the default branch in our repositories #391</a></p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Pep Codes</title><link>http://pep.codes/posts/</link><description>Recent content in Posts on Pep Codes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0&lt;/a></copyright><lastBuildDate>Thu, 22 Dec 2022 21:35:00 +0100</lastBuildDate><atom:link href="http://pep.codes/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Advent of Emacs Lisp</title><link>http://pep.codes/posts/advent-of-elisp/</link><pubDate>Thu, 22 Dec 2022 21:35:00 +0100</pubDate><guid>http://pep.codes/posts/advent-of-elisp/</guid><description>I have been using Emacs for quite some time now, but so far I have never invested time to learn Emacs Lisp.
+I thought I could give a try at learning some basics using this year&amp;rsquo;s Advent of code. I am posting my progress in a repo in codeberg.
+Day 1 Hey, it&amp;rsquo;s my very first Emacs Lisp program. And I don&amp;rsquo;t have much time. And by one of these coincidences of the world, right when I had this thought of giving this a try, I saw this blog post pop up in my RSS feeds, pointing to a cool video by Gavin Freborn explaining how to solve this challenge.</description><content type="html"><![CDATA[<p>I have been using Emacs for quite some time now, but so far I have never invested time to learn Emacs Lisp.</p>
+<p>I thought I could give a try at learning some basics using this year&rsquo;s <a href="https://adventofcode.com/">Advent of code</a>. I am posting my progress in a <a href="https://codeberg.org/codificat/advent-of-code/src/branch/main/2022">repo in codeberg</a>.</p>
+<h2 id="day-1">Day 1</h2>
+<p>Hey, it&rsquo;s my very first Emacs Lisp program. And I don&rsquo;t have much time. And by
+one of these coincidences of the world, right when I had this thought of giving
+this a try, I saw <a href="https://sachachua.com/blog/2022/12/2022-12-19-emacs-news/">this blog post</a> pop up in my RSS feeds, pointing to a <a href="https://youtu.be/N1PAC5vs15Y">cool video
+</a>by Gavin Freborn explaining how to solve this challenge.</p>
+<p>So, I basically used that video to learn a bit, and for the <a href="https://codeberg.org/codificat/advent-of-code/src/branch/main/2022/aoc01.el">solution</a> I took
+<a href="https://gist.github.com/Gavinok/1631fd138fc91a08a33c4b66afe15f39">his code</a> and only replaced a couple of common-lisp calls for (what I think) more
+emacs-lispy ones.</p>
+<h2 id="day-2">Day 2</h2>
+<p>I applied the principles I learnt from Day 1 here, using a temp buffer as a sort
+of <em>powerful string</em>.</p>
+<p>I am quite happy with <a href="https://codeberg.org/codificat/advent-of-code/src/branch/main/2022/aoc02.el">the result</a>, from a &ldquo;learning elisp&rdquo; perspective. It&rsquo;s
+likely not the most efficient way of solving this, but it feels to me that it
+hopefully captures the expressiveness of Lisp. Re-using the solution to part 1
+to add adding part 2 rules resulted, I think, in a nice application of that.</p>
+]]></content></item><item><title>Running Emacs in server mode</title><link>http://pep.codes/posts/emacs-systemd/</link><pubDate>Fri, 09 Dec 2022 21:52:00 +0100</pubDate><guid>http://pep.codes/posts/emacs-systemd/</guid><description>I have been running Emacs in server mode for a while. Until recently, my workflow was:
+start emacs M-x server-start Following the blog post (Schwartzmeyer 2021), from now on I will try to start Emacs directly server mode, managed by systemd:
+systemctl --user enable --now emacs journalctl --user-unit emacs Fixing the systemd unit Enabling the systemd unit initially failed:
+pep@uio ~ $ systemctl --user enable emacs Failed to enable unit: Unit file /home/pep/.</description><content type="html"><![CDATA[<p>I have been running Emacs in server mode for a while. Until recently, my workflow was:</p>
+<ol>
+<li>start emacs</li>
+<li><code>M-x server-start</code></li>
+</ol>
+<p>Following the blog post (<a href="#citeproc_bib_item_1">Schwartzmeyer 2021</a>), from now on I will try
+to start Emacs directly server mode, managed by systemd:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>systemctl --user enable --now emacs
+</span></span><span style="display:flex;"><span>journalctl --user-unit emacs
+</span></span></code></pre></div><h2 id="fixing-the-systemd-unit">Fixing the systemd unit</h2>
+<p>Enabling the systemd unit initially failed:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>pep@uio ~ $ systemctl --user enable emacs
+</span></span><span style="display:flex;"><span>Failed to enable unit: Unit file /home/pep/.config/systemd/user/default.target.wants/emacs.service does not exist.
+</span></span></code></pre></div><p>Quickly fixed with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>pep@uio user (master) $ mkdir -p ~/.config/systemd/user/default.target.wants
+</span></span><span style="display:flex;"><span>pep@uio user (master) $ systemctl --user enable emacs
+</span></span><span style="display:flex;"><span>Created symlink /home/pep/.config/systemd/user/default.target.wants/emacs.service → /usr/lib/systemd/user/emacs.service.
+</span></span></code></pre></div><p>with the following contents:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">Unit</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Description</span>=<span style="color:#a6e22e">Emacs</span> <span style="color:#a6e22e">text</span> <span style="color:#a6e22e">editor</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Documentation</span>=<span style="color:#a6e22e">info</span><span style="color:#960050;background-color:#1e0010">:</span><span style="color:#a6e22e">emacs</span> <span style="color:#a6e22e">man</span><span style="color:#960050;background-color:#1e0010">:</span><span style="color:#a6e22e">emacs</span><span style="color:#960050;background-color:#1e0010">(</span><span style="color:#ae81ff">1</span><span style="color:#960050;background-color:#1e0010">)</span> <span style="color:#a6e22e">https</span><span style="color:#960050;background-color:#1e0010">://</span><span style="color:#a6e22e">gnu</span>.<span style="color:#a6e22e">org</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">software</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">emacs</span><span style="color:#960050;background-color:#1e0010">/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">Service</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Type</span>=<span style="color:#a6e22e">notify</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ExecStart</span>=<span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">usr</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">bin</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">emacs</span> <span style="color:#a6e22e">--fg-daemon</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Emacs will exit with status 15 after having received SIGTERM, which</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># is the default &#34;KillSignal&#34; value systemd uses to stop services.</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">SuccessExitStatus</span>=<span style="color:#ae81ff">15</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># The location of the SSH auth socket varies by distribution, and some</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># set it from PAM, so don&#39;t override by default.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Environment=SSH_AUTH_SOCK=%t/keyring/ssh</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Restart</span>=<span style="color:#a6e22e">on-failure</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#a6e22e">Install</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WantedBy</span>=<span style="color:#a6e22e">default</span>.<span style="color:#a6e22e">target</span>
+</span></span></code></pre></div><h2 id="safe-shutdown">Safe shutdown</h2>
+<p>Then, what about open files when closing?</p>
+<p>Building upon <a href="https://www.emacswiki.org/emacs/EmacsAsDaemon#h5o-2">EmacsWiki docs for systemd</a> I believe I should modify the systemd unit to include something like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#a6e22e">ExecStop</span>=<span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">usr</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">bin</span><span style="color:#960050;background-color:#1e0010">/</span><span style="color:#a6e22e">emacsclient</span> <span style="color:#a6e22e">--eval</span> <span style="color:#e6db74">&#34;(save-buffers-kill-emacs)&#34;</span>
+</span></span></code></pre></div><p>but I need to finalize some doubts, like setting <code>confirm-kill-process</code>.</p>
+<h2 id="checking-status">Checking status</h2>
+<p>After starting it with <code>systemctl --user start emacs</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>pep@uio ~ $ systemctl --user status emacs
+</span></span><span style="display:flex;"><span>● emacs.service - Emacs text editor
+</span></span><span style="display:flex;"><span>     Loaded: loaded (/usr/lib/systemd/user/emacs.service; disabled; vendor preset: disabled)
+</span></span><span style="display:flex;"><span>     Active: active (running) since Thu 2022-11-24 12:40:42 CET; 21min ago
+</span></span><span style="display:flex;"><span>       Docs: info:emacs
+</span></span><span style="display:flex;"><span>             man:emacs(1)
+</span></span><span style="display:flex;"><span>             https://gnu.org/software/emacs/
+</span></span><span style="display:flex;"><span>   Main PID: 43673 (emacs)
+</span></span><span style="display:flex;"><span>      Tasks: 8 (limit: 38145)
+</span></span><span style="display:flex;"><span>     Memory: 516.1M
+</span></span><span style="display:flex;"><span>        CPU: 44.767s
+</span></span><span style="display:flex;"><span>     CGroup: /user.slice/user-1000.slice/user@1000.service/app.slice/emacs.service
+</span></span><span style="display:flex;"><span>             ├─ 43673 /usr/bin/emacs --fg-daemon
+</span></span><span style="display:flex;"><span>             ├─ 43677 /home/pep/.emacs.d/elpa/emacsql-sqlite-20221024.1455/sqlite/emacsql-sqlite /home/pep/.emacs.d/org-roam.db
+</span></span><span style="display:flex;"><span>             ├─ 43710 /home/pep/.emacs.d/elpa/pdf-tools-20221007.1404/epdfinfo
+</span></span><span style="display:flex;"><span>             ├─ 43946 /usr/bin/mu server
+</span></span><span style="display:flex;"><span>             └─ 46975 /usr/bin/sh -i
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>de nov. 24 12:40:42 uio systemd[2978]: Started emacs.service - Emacs text editor.
+</span></span></code></pre></div><h2 id="updating-client-configuration">Updating client configuration</h2>
+<p>I have updated my i3wm configuration so that <code>S-b</code> will create a new emacs
+frame:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>$ grep -i emacs .config/i3/config
+</span></span><span style="display:flex;"><span># open a new emacs frame
+</span></span><span style="display:flex;"><span>bindsym $mod+b exec --no-startup-id emacsclient -c
+</span></span></code></pre></div><p>So, now, opening Emacs after logging in is just one keyboard shortcut away.</p>
+<p>Also updated aliases related to <code>emacsclient</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>alias e<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;emacsclient&#39;</span>
+</span></span><span style="display:flex;"><span>alias et<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;emacsclient -t&#39;</span>  <span style="color:#75715e"># for staying in the terminal</span>
+</span></span></code></pre></div><h2 id="references">References</h2>
+<style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
+  <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Schwartzmeyer, Andy. 2021. “Emacs on an iPad.” <a href="https://andschwa.com/posts/emacs-on-an-ipad/">https://andschwa.com/posts/emacs-on-an-ipad/</a>.</div>
+</div>
 ]]></content></item></channel></rss>

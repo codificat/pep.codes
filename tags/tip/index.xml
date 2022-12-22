@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tip on Pep Codes</title><link>http://pep.codes/tags/tip/</link><description>Recent content in tip on Pep Codes</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0&lt;/a></copyright><lastBuildDate>Tue, 25 Oct 2022 19:53:00 +0200</lastBuildDate><atom:link href="http://pep.codes/tags/tip/index.xml" rel="self" type="application/rss+xml"/><item><title>Renaming git branches from master to main</title><link>http://pep.codes/posts/first-post/</link><pubDate>Tue, 25 Oct 2022 19:53:00 +0200</pubDate><guid>http://pep.codes/posts/first-post/</guid><description>I was looking at the integration tests for Thoth GitHub repo and I get this warning:
-The default branch has been renamed!
-master is now named main
-If you have a local clone, you can update it by running the following commands.
-These are the commands (git tips):
-git branch -m master main git fetch origin git branch -u origin/main main git remote set-head origin -a In my case, as this is my upstream remote, I did:</description></item></channel></rss>
