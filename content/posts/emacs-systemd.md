@@ -1,19 +1,18 @@
 +++
 title = "Running Emacs in server mode"
 author = ["Pep Turró Mauri"]
-tags = ["emacs"]
-draft = true
+date = 2022-12-09T21:52:00+01:00
+tags = ["emacs", "systemd"]
+draft = false
 +++
 
-Note: taken from [2022-11-24]({{< relref "#d41d8c" >}}) notes, needs improvement.
-
-I have been running Emacs in server mode for a while. So far, my workflow was:
+I have been running Emacs in server mode for a while. Until recently, my workflow was:
 
 1.  start emacs
 2.  `M-x server-start`
 
 Following the blog post (<a href="#citeproc_bib_item_1">Schwartzmeyer 2021</a>), from now on I will try
-running Emacs in server mode, started by systemd:
+to start Emacs directly server mode, managed by systemd:
 
 ```sh
 systemctl --user enable --now emacs
@@ -114,15 +113,16 @@ $ grep -i emacs .config/i3/config
 bindsym $mod+b exec --no-startup-id emacsclient -c
 ```
 
-So, now, opening Emacs after logging in is just one keyboard shortcut
-away.
+So, now, opening Emacs after logging in is just one keyboard shortcut away.
 
 Also updated aliases related to `emacsclient`:
 
-```text
+```bash
 alias e='emacsclient'
 alias et='emacsclient -t'  # for staying in the terminal
 ```
+
+## References
 
 <style>.csl-entry{text-indent: -1.5em; margin-left: 1.5em;}</style><div class="csl-bib-body">
   <div class="csl-entry"><a id="citeproc_bib_item_1"></a>Schwartzmeyer, Andy. 2021. “Emacs on an iPad.” <a href="https://andschwa.com/posts/emacs-on-an-ipad/">https://andschwa.com/posts/emacs-on-an-ipad/</a>.</div>

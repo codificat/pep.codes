@@ -1,25 +1,38 @@
 #+hugo_base_dir: ../
+#+bibliography: ~/doc/bibliography/zotero.bib
+#+cite_export: csl
 
-* TODO Running Emacs in server mode                                   :emacs:
+* DONE Running Emacs in server mode                           :emacs:systemd:
+CLOSED: [2022-12-09 Fri 21:52]
 :PROPERTIES:
 :EXPORT_FILE_NAME: emacs-systemd
 :END:
 :LOGBOOK:
+- State "NEXT"       from              [2022-12-09 Fri 16:55]
+- State "CANCELLED"  from "TODO"       [2022-12-09 Fri 13:58] \\
+  testing adding a timestamp
 - State "TODO"       from              [2022-11-24 dj. 16:22]
 - State "CANCELLED"  from "TODO"       [2022-11-24 dj. 15:55] \\
   just testing hugo export
 - State "TODO"       from              [2022-11-24 dj. 13:30]
 :END:
 
-Note: taken from [[id:81487236-428d-464e-9b2b-b97c7ea8c08e][2022-11-24]] notes, needs improvement.
+#+begin_comment
+Note: content taken from daily notes:
+- [[id:81487236-428d-464e-9b2b-b97c7ea8c08e][2022-11-24]]
+- [[id:c1db16ab-4806-4a98-bf93-87e0dfcf6b1b][2022-11-28]]
+- [[id:a4a0d1ec-a2ca-4333-9274-ceed1ec7450d][2022-11-29]]
+- [[id:b86776bd-2be5-4b9f-8478-72486a8d0a6d][2022-12-01]]
+- [[id:b643c6bc-025a-48b6-9df4-dc0db769782e][Emacs]]
+#+end_comment
 
-I have been running Emacs in server mode for a while. So far, my workflow was:
+I have been running Emacs in server mode for a while. Until recently, my workflow was:
 
   1. start emacs
   2. =M-x server-start=
 
-Following the blog post [[cite:&schwartzmeyer2021emacs]], from now on I will try
-running Emacs in server mode, started by systemd:
+Following the blog post [cite:@schwartzmeyer2021emacs], from now on I will try
+to start Emacs directly server mode, managed by systemd:
 
 #+begin_src sh
   systemctl --user enable --now emacs
@@ -68,6 +81,7 @@ WantedBy=default.target
 #+end_src
 
 ** Safe shutdown
+
 Then, what about open files when closing?
 
 Building upon [[https://www.emacswiki.org/emacs/EmacsAsDaemon#h5o-2][EmacsWiki docs for systemd]] I believe I should modify the systemd unit to include something like:
@@ -115,14 +129,30 @@ $ grep -i emacs .config/i3/config
 bindsym $mod+b exec --no-startup-id emacsclient -c
 #+end_example
 
-So, now, opening Emacs after logging in is just one keyboard shortcut
-away.
+So, now, opening Emacs after logging in is just one keyboard shortcut away.
 
 Also updated aliases related to =emacsclient=:
 
-#+begin_example
+#+begin_src bash
 alias e='emacsclient'
 alias et='emacsclient -t'  # for staying in the terminal
-#+end_example
+#+end_src
 
-[[bibliography:~/doc/bibliography/zotero.bib]]
+#+print_bibliography:
+
+** TODO COMMENT Pending issues
+
+[[https://magit.vc/][Magit]] [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Fringes.html][fringes]] don't show up, see notes taken [[id:8dc4508b-7f4d-4bf2-ace2-ef3bae65e3cb][2022-12-16]].
+
+One workaround could be to hardcode the value of =magit-section-visibility-indicator= in the emacs config.
+along the lines of https://irreal.org/blog/?p=8877 (for a different setting).
+
+As this is a customizable value, I just hardcoded it with customize.
+
+But there must be a better way
+
+I want that value to be different if I am in a terminal client vs a graphical client!
+
+*NOTE*: I am pretty sure that, somehow, org-capture manages to find out it's
+ running on a graphical session: I'm pretty sure I have seen it add a red dot
+ fringe after capturing a new journal entry or action item for the inbox
