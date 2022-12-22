@@ -44,20 +44,28 @@ copyright = "This work is licensed under a Creative Commons Attribution-ShareAli
     ]
 
   [[params.social]]
-    name = "twitter"
-    url = "https://twitter.com/codificat"
+    name = "mastodon"
+    url = "https://fosstodon.org/@codificat"
 
   [[params.social]]
-    name = "mastodon"
-    url = "https://mastodont.cat/@codificat"
+    name = "twitter"
+    url = "https://twitter.com/codificat"
 
   [[params.social]]
     name = "github"
     url  = "https://github.com/codificat"
 
   [[params.social]]
+    name = "codeberg"
+    url  = "https://codeberg.org/codificat"
+
+  [[params.social]]
     name = "linkedin"
-    url  = "https://www.linkedin.com/in/peptm"
+    url  = "https://www.linkedin.com/in/pepturro/"
+
+  [[params.social]]
+    name = "email"
+    url = "mailto:contact@pep.codes"
 
 [taxonomies]
     category = "blog"
